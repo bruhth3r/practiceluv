@@ -1,4 +1,11 @@
-/* The Chatbox Toggle GIF */
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Chatbox Toggle GIF */
 #chatbox-toggle {
     position: fixed;
     top: 20px; /* Adjust to where you want the button */
@@ -7,7 +14,7 @@
     cursor: pointer;
     width: 50px; /* Size of the GIF */
     height: 50px; /* Size of the GIF */
-    opacity: 0; /* Make the GIF invisible */
+    opacity: 0.7;
 }
 
 /* Chatbox Styling */
@@ -52,85 +59,65 @@
     letter-spacing: 1px;
     color: #000;
 }
-/* Style for the note popup */
-.note {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #ffe6ee; /* Light baby pink inside */
-  border: 2px solid hotpink; /* Hot pink border */
-  padding: 20px;
-  font-family: 'aphotheotica', sans-serif; /* Same font as chatbox */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 200px;
-  text-align: center;
-}
 
-/* Style for the text inside the note */
-.note p {
-  margin: 0;
-  color: hotpink; /* Same color as chatbox text */
-  font-size: 18px;
-  font-weight: bold;
-}
 /* Song Note Styling */
 #song-note {
-  position: absolute;
-  top: 2%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #ffe6ee;  /* Light baby pink */
-  padding: 20px;
-  border-radius: 10px;
-  border: 2px solid hotpink;
-  display: none;  /* Hidden by default */
-  z-index: 9999;
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffe6ee;  /* Light baby pink */
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid hotpink;
+    display: none;  /* Hidden by default */
+    z-index: 9999;
 }
 
 #song-note ul {
-  list-style-type: none;  /* Remove the default bullet points */
-  padding-left: 0;
+    list-style-type: none;  /* Remove the default bullet points */
+    padding-left: 0;
 }
 
 #song-note li {
-  font-family: 'aphotheotica', sans-serif;
-  font-size: 1.2em;
-  color: hotpink;  /* Same color as chatbox text */
-  margin-bottom: 10px;
+    font-family: 'aphotheotica', sans-serif;
+    font-size: 1.2em;
+    color: hotpink;  /* Same color as chatbox text */
+    margin-bottom: 10px;
 }
 
-/* This class makes the note visible */
-#song-note.active {
-  display: block;  /* Show when active */
-}
+/* Love Note Styling */
 #love-note {
-  position: fixed;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #ffe6f0; /* soft baby pink */
-  border: 3px solid hotpink;
-  padding: 20px;
-  border-radius: 20px;
-  text-align: center;
-  z-index: 999;
-  width: 250px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  font-family: 'Comic Sans MS', 'cursive'; /* bubbly font */
-  font-size: 16px;
-  color: #ff69b4; /* darker cute pink */
-  display: none; /* start hidden */
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffe6f0; /* soft baby pink */
+    border: 3px solid hotpink;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    z-index: 999;
+    width: 250px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    font-family: 'Comic Sans MS', 'cursive'; /* bubbly font */
+    font-size: 16px;
+    color: #ff69b4; /* darker cute pink */
+    display: none; /* start hidden */
 }
 
 #love-note img {
-  width: 100px;
-  height: auto;
-  margin-top: 10px;
+    width: 100px;
+    height: auto;
+    margin-top: 10px;
 }
 
-.hidden {
-  display: none;
+/* Show elements with the 'active' class */
+#cbox.active, #song-note.active, #love-note.active {
+    display: block;  /* Make it visible */
+}
+
+/* Hide elements without the 'active' class */
+#cbox, #song-note, #love-note {
+    display: none;  /* Hidden by default */
 }
